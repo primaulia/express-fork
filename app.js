@@ -9,6 +9,7 @@ mongoose.connect(dbURI)
 
 // require the models
 var User = require('./models/user')
+var Home = require('./models/home')
 
 // setting my template engine for express
 app.set('view engine', 'ejs')
@@ -17,12 +18,31 @@ app.set('view engine', 'ejs')
 var ejsLayouts = require('express-ejs-layouts')
 app.use(ejsLayouts)
 
+// handle the post request
+var bodyParser = require('body-parser')
+app.use(bodyParser.urlencoded({extended: false}))
+
 // This is where your routes start
+// app.get('/', function (req, res) {
+//   User.find({}, function (err, users) {
+//     console.log(users)
+//     if (err) console.error(err)
+//     res.render('homepage', {allUsers: users})
+//   })
+// })
+
 app.get('/', function (req, res) {
-  User.find({}, function (err, users) {
+  Home.find({}, function (err, homes) {
     if (err) console.error(err)
-    res.render('homepage', {allUsers: users})
+    res.render('home', {allHomes: homes})
   })
+})
+
+app.post('/', function (req, res) {
+  console.log(req.body)
+  // talk to the db
+  // insert the given data into the database
+  res.send(req.body)
 })
 
 app.get('/users/:id', function (req, res) {
