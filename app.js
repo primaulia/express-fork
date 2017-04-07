@@ -14,6 +14,25 @@ app.get('/faq', function (req, res) {
   res.send('faq brian')
 })
 
-app.listen(port, function () {
+app.get('/contact', function (req, res) {
+  res.send('contact brian')
+})
+
+
+app.get('/services', function (req, res) {
+  res.send('services brian')
+})
+
+
+app.get('/capitalize/:string', function(req, res){
+  var upp = req.params.string.toUpperCase()
+  var html = '<html><h1>' + upp + '</h1</html>'
+  res.send(html)
+})
+
+app.listen(port, function (err) {
+  if (err) {
+     console.log(err)
+   }
   console.log('express is running on port ' + port)
 })
