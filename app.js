@@ -17,11 +17,18 @@ app.get('/faq', function (req, res) {
 app.get('/hello', function (req, res) {
   res.send('hello world')
 })
+app.get('/people/:email', function (req, res) {
+  console.log('req.params are , req.params')
+  console.log('retrieve people with email' + req.params.email)
+})
+
+app.get('/capitalize/:string' ,function(req , res){
+  console.log(typeof req.params)
+  var string = req.params.string.toUpperCase()
+  res.send(string)
+
+})
 
 app.listen(port1, function () {
   console.log('express is running on port ' + port1)
-})
-
-app.listen(port2, function () {
-  console.log('express is running on port ' + port2)
 })
