@@ -1,13 +1,13 @@
 var express = require('express')
 var app = express()
-var port = 4000
+var port = 3000
 
 app.get('/', function (req, res) {
   res.send('hello brian')
 })
 
-app.get('/about', function (req, res) {
-  res.send('about brian')
+app.get('/urgh', function (req, res) {
+  res.send('urgh brian')
 })
 
 app.get('/faq', function (req, res) {
