@@ -3,13 +3,11 @@ var app = express()
 var port = 4000
 
 app.get('/', function (req, res) {
-  var html = '<html><body><h1>Hello World</h1></body></html>'
-  res.send(html)
+  res.sendFile('./homepage.html', { root: __dirname })
 })
 
 app.get('/about', function (req, res) {
-  console.log(req.params)
-  res.send('about brian')
+  res.sendFile('./about.html', { root: __dirname })
 })
 
 app.get('/faq', function (req, res) {
