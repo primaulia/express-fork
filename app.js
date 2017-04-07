@@ -3,15 +3,15 @@ var app = express()
 var port = 3000
 
 app.get('/', function (req, res) {
-  res.send('hello brian')
+  res.send('hello maria')
 })
 
 app.get('/about', function (req, res) {
-  res.send('about brian')
+  res.send('about maria')
 })
 
 app.get('/faq', function (req, res) {
-  res.send('faq brian')
+  res.send('faq maria')
 })
 
 app.get('/contact', function (req, res) {
