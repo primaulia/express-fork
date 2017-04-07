@@ -18,8 +18,19 @@ app.get('/contact', function (req, res) {
   res.send('contact brian')
 })
 
-app.get('/callme', function (req, res) {
-  res.send('callme brian')
+app.get('/callme/:name', function (req, res) {
+  console.log(req.params)
+  console.log(req.params.name)
+  var html = '<html><h1>Hello ' + req.params.name + '</h1></html>'
+  res.send(html)
+})
+
+app.get('/capitalize/:string', function (req, res) {
+  console.log(req.params)
+  console.log(req.params.string)
+  var caps = req.params.string.toUpperCase()
+  var html = '<html><h1>Hello ' + caps +'  </h1></html>'
+  res.send(html)
 })
 
 app.listen(port, function () {
