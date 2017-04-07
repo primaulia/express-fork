@@ -1,15 +1,26 @@
 {
   "name": "express-fork",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node app",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.15.2"
-  }
+    "express": "^4.15.2",
+    "nodemon": "^1.11.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayepRahman/express-fork.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ayepRahman/express-fork/issues"
+  },
+  "homepage": "https://github.com/ayepRahman/express-fork#readme",
+  "description": ""
 }
