@@ -22,6 +22,10 @@ app.get('/updateUser', function (req, res) {
   res.send('update user brian')
 })
 
+app.get('/removeUser', function (req, res) {
+  res.send('remove user brian')
+})
+
 app.listen(port, function () {
   console.log('express is running on port ' + port)
 })
