@@ -1,8 +1,7 @@
 {
   "name": "express-fork",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,5 +10,14 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.15.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imouto2005/express-fork.git"
+  },
+  "bugs": {
+    "url": "https://github.com/imouto2005/express-fork/issues"
+  },
+  "homepage": "https://github.com/imouto2005/express-fork#readme",
+  "description": ""
 }
