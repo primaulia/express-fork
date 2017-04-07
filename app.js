@@ -1,17 +1,17 @@
 var express = require('express')
 var app = express()
-var port = 4000
+var port = 3117
 
 app.get('/', function (req, res) {
-  res.send('hello brian')
+  res.send('Welcome to my humle abode')
 })
 
 app.get('/about', function (req, res) {
-  res.send('about brian')
+  res.send('about this humbe abode')
 })
 
-app.get('/faq', function (req, res) {
-  res.send('faq brian')
+app.get('/contact', function (req, res) {
+  res.send('contacting this humble abode')
 })
 
 app.listen(port, function () {
