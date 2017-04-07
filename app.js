@@ -3,15 +3,13 @@ var app = express()
 var port = 3000
 
 app.get('/', function (req, res) {
-  res.send('hello brian')
+  res.send('hello world')
 })
 
-app.get('/about', function (req, res) {
-  res.send('about brian')
-})
-
-app.get('/faq', function (req, res) {
-  res.send('faq brian')
+app.get('/capitalize/:string', function (req, res) {
+  console.log(req.params.string.toUpperCase())
+  var html = '<html><h1 style="font-size: 100px; color: pink;">' + req.params.string.toUpperCase() + '</h1></html>'
+  res.send(html)
 })
 
 app.listen(port, function () {
