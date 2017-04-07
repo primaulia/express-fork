@@ -2,18 +2,25 @@ var express = require('express')
 var app = express()
 var port = 4000
 
+var fs = require('fs')
+
+app.set('view engine', 'ejs')
+
+//ROUTE STARTS HERE
+
 app.get('/', function (req, res) {
 
-  res.sendFile('./homepage.html', {root: __dirname})
+res.render('homepage')
 })
 
 app.get('/about', function (req, res) {
-  res.sendFile('./about.html', {root: __dirname})
+  res.render('about')
 })
 
 app.get('/contact', function (req, res) {
-  res.sendFile('./contact.html', {root: __dirname})
+  res.render('contact')
 })
+
 
 // app.get('/people/*', function (req, res) {
 //   console.log('req.params are ', req.params)
@@ -30,7 +37,7 @@ app.get('/contact', function (req, res) {
 //   res.sendFile('.homepage.html')
 // })
 
-
+// ROUTE ENDS HERE
 
 app.listen(port, function () {
   console.log('express is running on port ' + port)
