@@ -22,6 +22,10 @@ app.get('/contact', function (req, res) {
   res.send('faq brian')
 })
 
+app.get('/capitalize/:string', function (req, res) {
+  res.send(req.params.string.toUpperCase())
+})
+
 app.listen(port, function () {
   console.log('express is running on port ' + port)
 })
