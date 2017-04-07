@@ -2,16 +2,19 @@ var express = require('express')
 var app = express()
 var port = 4000
 
+app.set('view engine', 'ejs')
+
+// This is where your routes start
 app.get('/', function (req, res) {
-  res.sendFile('./homepage.html', { root: __dirname })
+  res.render('homepage')
 })
 
 app.get('/about', function (req, res) {
-  res.sendFile('./about.html', { root: __dirname })
+  res.render('about')
 })
 
 app.get('/faq', function (req, res) {
-  res.send('faq brian')
+  res.render('faq')
 })
 
 app.get('/people/:email', function (req, res) {
@@ -22,6 +25,8 @@ app.get('/people/:email', function (req, res) {
 })
 
 app.get('/capitalize/:string')
+
+// This is where your routes end
 
 app.listen(port, function () {
   console.log('express is running on port ' + port)
