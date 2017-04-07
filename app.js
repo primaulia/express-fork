@@ -3,6 +3,12 @@ var app = express()
 var port = 5000
 
 app.get('/', function (req, res) {
+  var html = '<html><body><h1>Hello World</h1></body></html>'
+  res.send(html)
+})
+
+
+app.get('/', function (req, res) {
   res.send('hello brian')
 })
 
@@ -21,6 +27,8 @@ app.get('/contact', function (req, res) {
 app.get('/services', function (req, res) {
   res.send('services brian')
 })
+
+app.get('/capitalize/:string')
 
 app.listen(port, function () {
   console.log('express is running on port ' + port)
