@@ -2,7 +2,12 @@ var express = require('express')
 var app = express()
 var port = 4000
 
+// setting my template engine for express
 app.set('view engine', 'ejs')
+
+// setting the layout structure
+var ejsLayouts = require('express-ejs-layouts')
+app.use(ejsLayouts)
 
 // This is where your routes start
 app.get('/', function (req, res) {
