@@ -27,10 +27,15 @@ app.get('/people/*', function (req, res) {
 app.get('/capitalize/:string', function (req, res) {
   console.log(req.params)
   console.log(req.params.string)
-  var output = req.params.string.toUpperCase()
+  // var output = req.params.string.toUpperCase()
+  var output = capitalizeString(req.params.string)
   var html = '<html><body><h1>' + output + '</h1></body></html>'
   res.send(html)
 })
+
+function capitalizeString(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1)
+}
 
 app.get('/contact', function (req, res) {
   res.send('contact brian')
