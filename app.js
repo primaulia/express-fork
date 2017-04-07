@@ -22,6 +22,22 @@ app.get('/services', function (req, res) {
   res.send('services brian')
 })
 
+app.get('/people/:string', function (req, res) {
+  console.log('req.params are', req.params)
+  console.log('retrieve people with string', req.params.string)
+  var output = req.params.string.toUpperCase()
+  var html = '<html><h1>' + output + '</h1></html>'
+  res.send(html)
+})
+
+app.get('/capitalize/:string', function (req, res) {
+  console.log('req.params are', req.params)
+  console.log('retrieve people with string', req.params.string)
+  var output = req.params.string.toUpperCase()
+  var html = '<html><h1>' + output + '</h1></html>'
+  res.send(html)
+})
+
 app.listen(port, function () {
   console.log('express is running on port ' + port)
 })
