@@ -2,6 +2,14 @@ var express = require('express')
 var app = express()
 var port = 4000
 
+// connect to db
+var mongoose = require('mongoose')
+var dbURI = 'mongodb://localhost/test'
+mongoose.connect(dbURI)
+
+// require the models
+var User = require('./models/user')
+
 // setting my template engine for express
 app.set('view engine', 'ejs')
 
@@ -11,7 +19,18 @@ app.use(ejsLayouts)
 
 // This is where your routes start
 app.get('/', function (req, res) {
-  res.render('homepage')
+  User.find({}, function (err, users) {
+    if (err) console.error(err)
+    res.render('homepage', {allUsers: users})
+  })
+})
+
+app.get('/users/:id', function (req, res) {
+  console.log(req.params.id)
+  User.findById(req.params.id, function (err, user) {
+    if (err) console.error(err)
+    res.render('userpage', {theUser: user})
+  })
 })
 
 app.get('/about', function (req, res) {
