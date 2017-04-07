@@ -14,14 +14,10 @@ app.get('/faq', function (req, res) {
   res.send('faq jonathan')
 })
 
-app.get('/capitalize/:string', function(req, res) {
-  var str = req.params.string
-  var x = str[0].toUpperCase()
-  var y = str.split('')
-  y.shift()
-  var final = y.reduce(function(a,b) {
-    return a + b
-  }, x)
+app.get('/capitalize/:string', function (req, res) {
+  var final = req.params.string.split('').map(function (char, index) {
+    return index === 0 ? char.toUpperCase() : char
+  }).join('')
   res.send(final)
 })
 
